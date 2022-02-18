@@ -4,6 +4,9 @@
 #define motorPin1 6 //motor pin 1
 #define motorPin2 7 //motor pin 2
 
+const unsigned long openHeight = 100;
+const unsigned long closeHeight = 50;
+
 const unsigned long openTime = 1000;  //time to open gate in ms
 const unsigned long closeTime = 900; //time to close gate in ms
 
@@ -11,11 +14,13 @@ const unsigned long closeTime = 900; //time to close gate in ms
 long duration; // variable for the duration of sound wave travel
 int distance; // variable for the distance measurement
 
-unsigned long openTik = 0;
-unsigned long openTok = 0;
+float openTik = -1;
+float openTok = -1;
 
-unsigned long closeTik = 0;
-unsigned long closeTok = 0;
+float closeTik = -1;
+float closeTok = -1;
+
+bool isOpen = false;
 
 void setup() {
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT
@@ -43,22 +48,23 @@ void loop() {
   Serial.print(distance);
   Serial.println(" cm");
   // Motor
-  if(distance>=100.0){
-    if (openTik==0){
+  if(distance>=openHeight){
+    if (openTik==-1){
       openTik = millis();
     }
     openTok = millis();
     if (openTok - openTik < openTime){
       open();
+      isOpen = true;
     }
     else{
       stop();
-      openTik = 0;
-      openTok = 0;
+      openTik = -1;
+      openTok = -1;
     }
   }
-  else if(distance<50.0){
-    if (closeTik==0){
+  else if(distance<=closeHeight && isOpen){
+    if (closeTik==-1){
       closeTik = millis();
     }
     closeTok = millis();
@@ -67,16 +73,17 @@ void loop() {
     }
     else{
       stop();
-      closeTik = 0;
-      closeTok = 0;
+      closeTik = -1;
+      closeTok = -1;
+      isOpen = false;
     }
   }
   else{
     stop();
-    openTik = 0;
-    openTok = 0;
-    closeTik = 0;
-    closeTok = 0;
+    openTik = -1;
+    openTok = -1;
+    closeTik = -1;
+    closeTok = -1;
   }
 }
 
