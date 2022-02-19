@@ -1,7 +1,7 @@
 # Automatic Dam Shutter System
 <img src="images/dam gate.jpg" width=900>
 
-## Circuit Diagram
+## Circuit Diagram:
 <img src="images/circuit diagram for ADS.PNG" width=600>
 
 ## Algorithm:
