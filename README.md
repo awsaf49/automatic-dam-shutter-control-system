@@ -1,5 +1,5 @@
 # Automatic Dam Shutter System
-<img src="https://vitaratours.com/wp-content/uploads/2021/03/neyyar-dam.jpg" width=800>
+<img src="images/dam gate.jpg" width=900>
 
 ## Circuit Diagram
 <img src="images/circuit diagram for ADS.PNG" width=600>
