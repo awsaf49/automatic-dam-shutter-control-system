@@ -1,4 +1,4 @@
-# Automatic Dam Shutter System
+# Automatic Dam Shutter Control System
 <img src="images/dam gate.jpg" width=900>
 
 ## Circuit Diagram
