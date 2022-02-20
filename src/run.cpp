@@ -25,9 +25,9 @@ const byte trigPin = 3; //attach pin D3 Arduino to pin Trig of HC-SR04
 const byte motorPin1 = 6; //motor pin 1
 const byte motorPin2 = 7; //motor pin 2
   
-const unsigned long damHeight = 200; //height of the dam in cm
-const unsigned long openHeight = 100; //height to open the gate
-const unsigned long closeHeight = 50; //height to close the gate
+const unsigned long damHeight = 27; //height of the dam in cm
+const unsigned long openHeight = 16; //height to open the gate
+const unsigned long closeHeight = 13; //height to close the gate
 
 const unsigned long openTime = 500;  //time to open gate in ms
 const unsigned long closeTime = 300; //time to close gate in ms
@@ -68,7 +68,7 @@ void loop() {
   // Calculating the distance
   distance = duration * windSpeed / 2; // Speed of sound wave divided by 2 (go and back)
   
-  // Find height of the water from base	
+  // Find height of the water from base  
   unsigned long waterHeight = damHeight - distance; // Height of water from base
   // Displays the height on the Serial Monitor
   Serial.print("Height: ");
