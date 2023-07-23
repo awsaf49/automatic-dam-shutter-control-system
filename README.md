@@ -25,4 +25,6 @@ There are total 4 states,
 
 
 ## Video Presentation
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=vJBLNKxv4g4)
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/vJBLNKxv4g4/0.jpg)](https://www.youtube.com/watch?v=vJBLNKxv4g4)
